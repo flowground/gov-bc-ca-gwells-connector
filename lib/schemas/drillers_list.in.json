@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "search": {
+            "required": false,
+            "type": "string"
+        },
+        "ordering": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}

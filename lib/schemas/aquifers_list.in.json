@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "aquifer_id": {
+            "required": false,
+            "type": "number"
+        },
+        "ordering": {
+            "required": false,
+            "type": "string"
+        },
+        "search": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer"
+        }
+    }
+}

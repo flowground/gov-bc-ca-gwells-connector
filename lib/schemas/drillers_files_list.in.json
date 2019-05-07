@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "person_guid": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

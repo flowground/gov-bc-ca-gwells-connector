@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "search": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

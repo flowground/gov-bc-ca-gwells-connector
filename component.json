@@ -1,0 +1,446 @@
+{
+    "title": "Groundwater Wells, Aquifers and Registry",
+    "description": "The groundwater wells, aquifers and registry API contains information related to groundwater wells and aquifers as well as a register of qualified well drillers and well pump installers registered to operate in B.C.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/gov.bc.ca/gwells/v1/openapi.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://apps.nrs.gov.bc.ca/gwells/api/v1/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Bearer": {
+                "label": "JWT (Bearer)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "aquifer_codes_demand_list": {
+            "main": "./lib/actions/aquifer_codes_demand_list.js",
+            "title": "return a list of aquifer demand codes",
+            "description": "return a list of aquifer demand codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_demand_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_materials_list": {
+            "main": "./lib/actions/aquifer_codes_materials_list.js",
+            "title": "return a list of aquifer material codes",
+            "description": "return a list of aquifer material codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_materials_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_productivity_list": {
+            "main": "./lib/actions/aquifer_codes_productivity_list.js",
+            "title": "return a list of aquifer productivity codes",
+            "description": "return a list of aquifer productivity codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_productivity_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_quality_concerns_list": {
+            "main": "./lib/actions/aquifer_codes_quality_concerns_list.js",
+            "title": "return a list of quality concern codes",
+            "description": "return a list of quality concern codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_quality_concerns_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_subtypes_list": {
+            "main": "./lib/actions/aquifer_codes_subtypes_list.js",
+            "title": "return a list of aquifer subtype codes",
+            "description": "return a list of aquifer subtype codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_subtypes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_vulnerability_list": {
+            "main": "./lib/actions/aquifer_codes_vulnerability_list.js",
+            "title": "return a list of aquifer vulnerability codes",
+            "description": "return a list of aquifer vulnerability codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_vulnerability_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifer_codes_water_use_list": {
+            "main": "./lib/actions/aquifer_codes_water_use_list.js",
+            "title": "return a list of water use codes",
+            "description": "return a list of water use codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifer_codes_water_use_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifers_list": {
+            "main": "./lib/actions/aquifers_list.js",
+            "title": "return a list of aquifers",
+            "description": "return a list of aquifers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifers_names_list": {
+            "main": "./lib/actions/aquifers_names_list.js",
+            "title": "List all aquifers in a simplified format",
+            "description": "List all aquifers in a simplified format",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifers_names_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifers_read": {
+            "main": "./lib/actions/aquifers_read.js",
+            "title": "return details of aquifers",
+            "description": "return details of aquifers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifers_read.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "aquifers_files_list": {
+            "main": "./lib/actions/aquifers_files_list.js",
+            "title": "list files found for the aquifer identified in the uri",
+            "description": "list files found for the aquifer identified in the uri",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/aquifers_files_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cities_drillers_list": {
+            "main": "./lib/actions/cities_drillers_list.js",
+            "title": "returns a list of cities with a qualified, registered operator (driller or installer)",
+            "description": "returns a list of cities with a qualified, registered operator (driller or installer)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cities_drillers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cities_installers_list": {
+            "main": "./lib/actions/cities_installers_list.js",
+            "title": "returns a list of cities with a qualified, registered operator (driller or installer)",
+            "description": "returns a list of cities with a qualified, registered operator (driller or installer)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cities_installers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "config_list": {
+            "main": "./lib/actions/config_list.js",
+            "title": "serves general configuration",
+            "description": "serves general configuration",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/config_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "drillers_list": {
+            "main": "./lib/actions/drillers_list.js",
+            "title": "Returns a list of all person records",
+            "description": "Returns a list of all person records",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/drillers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "drillers_names_list": {
+            "main": "./lib/actions/drillers_names_list.js",
+            "title": "Search for a person in the Register",
+            "description": "Search for a person in the Register",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/drillers_names_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "drillers_files_list": {
+            "main": "./lib/actions/drillers_files_list.js",
+            "title": "list files found for the aquifer identified in the uri",
+            "description": "list files found for the aquifer identified in the uri",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/drillers_files_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "keycloak_list": {
+            "main": "./lib/actions/keycloak_list.js",
+            "title": "serves keycloak config",
+            "description": "serves keycloak config",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/keycloak_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "submissions_options_list": {
+            "main": "./lib/actions/submissions_options_list.js",
+            "title": "Options required for submitting activity report forms",
+            "description": "Options required for submitting activity report forms",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/submissions_options_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "surveys_list": {
+            "main": "./lib/actions/surveys_list.js",
+            "title": "returns a list of active surveys",
+            "description": "returns a list of active surveys",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/surveys_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "wells_list": {
+            "main": "./lib/actions/wells_list.js",
+            "title": "returns a list of wells",
+            "description": "returns a list of wells",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/wells_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "wells_tags_list": {
+            "main": "./lib/actions/wells_tags_list.js",
+            "title": "seach for wells by tag or owner",
+            "description": "seach for wells by tag or owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/wells_tags_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "wells_files_list": {
+            "main": "./lib/actions/wells_files_list.js",
+            "title": "list files found for the well identified in the uri",
+            "description": "list files found for the well identified in the uri",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/wells_files_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "wells_read": {
+            "main": "./lib/actions/wells_read.js",
+            "title": "Return well detail.\nThis view is open to all, and has no permissions.",
+            "description": "Return well detail.\nThis view is open to all, and has no permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/wells_read.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
